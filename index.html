@@ -1,0 +1,201 @@
+<html>
+<head> 
+	<title>Popup contact form </title>
+	<meta name="robots" content="noindex, nofollow">	
+	<style type="text/css" media="screen">
+/*----------------------------------------------
+css settings for HTML div exactCenter 
+------------------------------------------------*/
+
+#abc{
+width: 100%;
+height: 100%;
+opacity: 0.95;
+top: 0;
+left: 0;
+display: none;
+position: fixed;			
+background: rgba(0,0,0,0.6);
+overflow:auto;
+
+}
+
+img#close{
+position: absolute;
+right: -14px;
+top: -14px;
+cursor: pointer;
+}
+
+div#popupContact{
+position: absolute; 
+left: 50%;
+top: 17%;
+margin-left: -202px;
+font-family: 'Raleway', sans-serif;
+}
+
+form{
+max-width: 300px;
+min-width: 250px;
+padding: 10px 50px;
+border: 2px solid gray;
+border-radius: 1px;
+font-family:raleway;
+background-color: white;
+}
+
+p{
+margin-top: 30px;
+}
+
+h2{
+background-color: #FEFFED;
+padding: 20px 35px;
+margin: -10px -50px;
+text-align:center;
+border-radius: 10px 10px 0 0;
+}
+
+hr{
+margin: 10px -50px;
+border: 0; 
+border-top: 1px solid #ccc;
+}
+ 
+input[type=text]{
+width:82%;
+padding: 10px;
+margin-top: 30px;
+border: 1px solid #ccc;
+padding-left: 40px;
+font-size: 16px;
+font-family:raleway;
+} 
+
+#name{
+background-image: url('../images/name.jpg');
+background-repeat: no-repeat;
+background-position: 5px 7px;
+}
+
+#email{
+background-image: url('../images/email.png');
+background-repeat: no-repeat;
+background-position: 5px 7px;
+}
+
+textarea{
+background-image: url('../images/msg.png');
+background-repeat: no-repeat;
+background-position: 5px 7px;
+width:82%;
+height: 95px;
+padding: 10px;
+resize:none;
+margin-top: 30px;
+border: 1px solid #ccc;
+padding-left: 40px;
+font-size: 16px;
+font-family:raleway;
+margin-bottom: 30px;
+}
+
+#submit{
+text-decoration:none;
+width:100%;
+text-align:center;
+display:block;
+background-color:#FFBC00;
+color: white;
+border: 1px solid #FFCB00;
+padding: 10px 0;
+font-size:20px;
+cursor:pointer;
+border-radius: 5px;
+}
+
+span{
+color:red;
+font-weight:bold;
+}
+
+button{
+width:10%;
+height:45px;
+border-radius:3px;
+background-color: peru;
+color:white;
+font-family: 'Raleway', sans-serif;
+font-size:18px;
+cursor:pointer;
+}
+
+/*-----------------------------------------------------------------
+css settings for right side advertisement
+------------------------------------------------------------------*/
+img#fugo{
+margin-left: 70%;
+}	
+	</style>
+
+<script type="text/javascript" charset="utf-8" async defer>
+	//function to validate empty field
+function check_empty(){
+if(document.getElementById('name').value == "" 
+|| document.getElementById('email').value == "" 
+||document.getElementById('msg').value == "" ){
+alert ("Fill All Fields !");
+}
+	else {  
+	document.getElementById('form').submit();  
+	alert ("Form submitted successfully...");
+	}
+}
+
+//function to display Popup
+function div_show(){ 
+document.getElementById('abc').style.display = "block";
+}
+
+//function to hide Popup
+function div_hide(){ 
+document.getElementById('abc').style.display = "none";
+}
+
+</script>
+	
+</script>
+</head> 
+ <!-- body starts here -->
+ <body id ="bdy" style="overflow:hidden;">
+ 
+ <div id="abc">
+ 
+	 <!-- Popup div starts here -->
+ <div id="popupContact"> 
+
+	<!-- contact us form -->
+		<form action="#" method="post" id="form" >
+			<img src="images/3.png" id="close" onclick ="div_hide()" />
+			<h2>Contact Us</h2><hr/>
+			<input type="text" name="name" id="name" placeholder="Name"/>
+			
+			<input type="text" name="email" id="email" placeholder="Email"/>
+			
+			<textarea name="message" placeholder="Message" id="msg"></textarea>
+			
+			<a id="submit" href="javascript: check_empty()">Send</a>
+			
+			<p><span>Note :</span> In this demo, we have stopped email sending functionality.</p>
+		</form>
+ </div> 
+ <!-- Popup div ends here -->
+ </div>
+ <!-- display popup button -->
+    <CENTER><h1>Click Button To Popup Form Using Javascript</h1>
+	        <button id = "popup" onclick ="div_show()">Popup</button></CENTER>
+
+ </body> 
+ <!-- body ends here -->
+ </html> 
